@@ -40,6 +40,35 @@ nodes:
               gateway: ${GATEWAY}
           vip:
             ip: ${VIP}
+    # - hostname: k8s-gpuworker-1
+    #   ipAddress: ${GPUWORKERIP}
+    #   nameservers:
+    #     - 8.8.8.8
+    #     - 1.1.1.1
+    #   installDiskSelector:
+    #     size: <= 250GB
+    #   schematic:
+    #       customization:
+    #           systemExtensions:
+    #               officialExtensions:
+    #                   - siderolabs/amd-ucode
+    #                   - siderolabs/nonfree-kmods-nvidia-production
+    #                   - siderolabs/iscsi-tools
+    #                   - siderolabs/util-linux-tools
+    - hostname: k8s-worker-1
+      ipAddress: ${WORKER1IP}
+      nameservers:
+        - 1.1.1.1
+        - 8.8.8.8
+      installDiskSelector:
+        size: <= 250GB
+      schematic:
+          customization:
+              systemExtensions:
+                  officialExtensions:
+                      - siderolabs/amd-ucode
+                      - siderolabs/iscsi-tools
+                      - siderolabs/util-linux-tools
 controlPlane:
     patches:
         - '@./patches/controlplane.yaml'

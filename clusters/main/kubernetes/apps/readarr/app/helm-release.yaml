@@ -106,8 +106,9 @@ spec:
                         targetSelector: exportarr
                 targetSelector: exportarr
                 type: ClusterIP
-        updated: true                runAsGroup: 568
-                runAsUser: 568
+        updated:
+        workload:
+            exportarr:
                 enabled: true
                 podSpec:
                     containers:
