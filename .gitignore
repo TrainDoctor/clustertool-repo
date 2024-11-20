@@ -8,3 +8,4 @@ clustertool
 cloudflare-entries
 misc
 *.log
+ssh-public-key.txt
