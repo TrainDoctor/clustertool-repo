@@ -27,7 +27,7 @@ spec:
             wg-easy:
                 accessKey: ${VOLSYNC_S3_ACCESSKEY}
                 bucket: ${VOLSYNC_S3_BUCKET}
-                encrKey: ${VOLSYNC_S3_BUCKET}
+                encrKey: ${VOLSYNC_S3_ENCKEY}
                 name: wg-easy
                 path: ""
                 secretKey: ${VOLSYNC_S3_SECRETKEY}
