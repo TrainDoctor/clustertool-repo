@@ -72,55 +72,55 @@ spec:
                 runAsUser: ${MEDIA_USER}
             pod:
                 fsGroupChangePolicy: OnRootMismatch
-        # service:
-        #     discovery:
-        #         enabled: true
-        #         loadBalancerIP: ""
-        #         ports:
-        #             discovery:
-        #                 enabled: true
-        #                 port: 21027
-        #                 protocol: udp
-        #                 targetPort: 21027
-        #         type: LoadBalancer
-        #     listeners:
-        #         enabled: true
-        #         loadBalancerIP: ""
-        #         ports:
-        #             tcp:
-        #                 enabled: true
-        #                 port: 22000
-        #                 targetPort: 22000
-        #         type: LoadBalancer
-        #     listeners-udp:
-        #         enabled: true
-        #         loadBalancerIP: ""
-        #         ports:
-        #             udp:
-        #                 enabled: true
-        #                 port: 22000
-        #                 protocol: udp
-        #                 targetPort: 22000
-        #         type: LoadBalancer
-        #     main:
-        #         enabled: true
-        #         loadBalancerIP: ""
-        #         ports:
-        #             main:
-        #                 port: 8384
-        #                 targetPort: 8384
-        #         type: LoadBalancer
-        # workload:
-        #     main:
-        #         podSpec:
-        #             containers:
-        #                 main:
-        #                     probes:
-        #                         liveness:
-        #                             path: /rest/noauth/health
-        #                         readiness:
-        #                             path: /rest/noauth/health
-        #                         startup:
-        #                             path: /rest/noauth/health
-        #         replicas: 1
-        #         type: Deployment
+        service:
+            discovery:
+                enabled: true
+                loadBalancerIP: ""
+                ports:
+                    discovery:
+                        enabled: true
+                        port: 21027
+                        protocol: udp
+                        targetPort: 21027
+                type: LoadBalancer
+            listeners:
+                enabled: true
+                loadBalancerIP: ""
+                ports:
+                    tcp:
+                        enabled: true
+                        port: 22000
+                        targetPort: 22000
+                type: LoadBalancer
+            listeners-udp:
+                enabled: true
+                loadBalancerIP: ""
+                ports:
+                    udp:
+                        enabled: true
+                        port: 22000
+                        protocol: udp
+                        targetPort: 22000
+                type: LoadBalancer
+            main:
+                enabled: true
+                loadBalancerIP: ""
+                ports:
+                    main:
+                        port: 8384
+                        targetPort: 8384
+                type: LoadBalancer
+        workload:
+            main:
+                podSpec:
+                    containers:
+                        main:
+                            probes:
+                                liveness:
+                                    path: /rest/noauth/health
+                                readiness:
+                                    path: /rest/noauth/health
+                                startup:
+                                    path: /rest/noauth/health
+                replicas: 1
+                type: Deployment
