@@ -31,12 +31,12 @@ spec:
             tag: 1.8.0.0@sha256:242ddfab3d263db7c0b2f193dd53e0bea3b6cbc0984af7bc63998e4aa597d1a3
         credentials:
             jellyfin:
-                accessKey: ${VOLSYNC_S3_ACCESSKEY}
-                bucket: ${VOLSYNC_S3_BUCKET}
-                encrKey: ${VOLSYNC_S3_ENCKEY}
-                secretKey: ${VOLSYNC_S3_SECRETKEY}
                 type: s3
-                url: ${VOLSYNC_S3_URL}
+        url: ${VOLSYNC_S3_URL}
+        bucket: ${VOLSYNC_S3_BUCKET}
+        accessKey: ${VOLSYNC_S3_ACCESSKEY}
+        secretKey: ${VOLSYNC_S3_SECRETKEY}
+        encrKey: ${VOLSYNC_S3_ENCKEY}
         ingress:
             main:
                 enabled: false
