@@ -56,17 +56,17 @@ spec:
                       src:
                         enabled: false
                       type: restic
-            transcode:
-                enabled: true
-                mountPath: /config/transcodes
-                readOnly: false
-                storageClass: ""
-            media-vol:
-                enabled: true
-                type: nfs
-                mountPath: /data/media
-                path: /mnt/PoolTwo/data/media
-                server: ${MEDIA_LOCAL_NAS_IP}
+            # transcode:
+            #     enabled: true
+            #     mountPath: /config/transcodes
+            #     readOnly: false
+            #     storageClass: ""
+            # media-vol:
+            #     enabled: true
+            #     type: nfs
+            #     mountPath: /data/media
+            #     path: /mnt/PoolTwo/data/media
+            #     server: ${MEDIA_LOCAL_NAS_IP}
         release_name: jellyfin
         resources: {}
         securityContext:
