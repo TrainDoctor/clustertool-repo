@@ -24,27 +24,13 @@ spec:
             vpn:
                 configFile: ""
                 env:
-                    VPN_ENDPOINT_IP:
-                        name: VPN_ENDPOINT_IP
-                        value: ${QBIT_VPN_ENDPOINT_IP}
-                    VPN_ENDPOINT_PORT:
-                        name: VPN_ENDPOINT_PORT
-                        value: ${QBIT_VPN_ENDPOINT_PORT}
-                    VPN_SERVICE_PROVIDER:
-                        name: VPN_SERVICE_PROVIDER
-                        value: ${QBIT_VPN_SERVICE_PROVIDER}
-                    VPN_TYPE:
-                        name: VPN_TYPE
-                        value: wireguard
-                    WIREGUARD_ADDRESSES:
-                        name: WIREGUARD_ADDRESSES
-                        value: ${QBIT_VPN_ADDRESSES}
-                    WIREGUARD_PRIVATE_KEY:
-                        name: WIREGUARD_PRIVATE_KEY
-                        value: ${QBIT_VPN_WG_PRIVATE_KEY}
-                    WIREGUARD_PUBLIC_KEY:
-                        name: WIREGUARD_PUBLIC_KEY
-                        value: ${QBIT_VPN_WG_PUBLIC_KEY}
+                    VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
+                    VPN_ENDPOINT_PORT: ${QBIT_VPN_ENDPOINT_PORT}
+                    VPN_SERVICE_PROVIDER: ${QBIT_VPN_SERVICE_PROVIDER}
+                    VPN_TYPE: wireguard
+                    WIREGUARD_ADDRESSES: ${QBIT_VPN_ADDRESSES}
+                    WIREGUARD_PRIVATE_KEY: ${QBIT_VPN_WG_PRIVATE_KEY}
+                    WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
                 excludedNetworks_IPv4:
                     - 192.168.0.0/24
                 killSwitch: true
@@ -66,7 +52,6 @@ spec:
                 enabled: true
                 mountPath: /config
                 readOnly: false
-                size: 1Gi
                 storageClass: ""
                 volsync:
                     - credentials: qbittorrent
