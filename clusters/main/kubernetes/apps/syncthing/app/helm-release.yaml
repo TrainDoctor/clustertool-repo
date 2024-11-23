@@ -62,7 +62,7 @@ spec:
                 path: /mnt/PoolTwo/other
                 server: ${MEDIA_LOCAL_NAS_IP}
         podOptions:
-            hostNetwork: true
+            hostNetwork: false
         release_name: syncthing
         resources: {}
         securityContext:
