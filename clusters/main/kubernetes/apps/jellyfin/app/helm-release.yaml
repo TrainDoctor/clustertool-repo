@@ -42,10 +42,10 @@ spec:
             main:
                 enabled: false
         persistence:
-            cache:
-                enabled: true
-                mountPath: /cache
-                type: emptyDir
+            # cache:
+            #     enabled: true
+            #     mountPath: /cache
+            #     type: emptyDir
             config:
                 mountPath: /config
                 volsync:
