@@ -32,14 +32,13 @@ spec:
                     grafana_dashboard: "1"
         credentials:
             prowlarr:
-                accessKey: ${VOLSYNC_S3_ACCESSKEY}
-                bucket: ${VOLSYNC_S3_BUCKET}
-                encrKey: ${VOLSYNC_S3_ENCKEY}
                 name: prowlarr
-                path: ""
-                secretKey: ${VOLSYNC_S3_SECRETKEY}
                 type: s3
                 url: ${VOLSYNC_S3_URL}
+                bucket: ${VOLSYNC_S3_BUCKET}
+                accessKey: ${VOLSYNC_S3_ACCESSKEY}
+                secretKey: ${VOLSYNC_S3_SECRETKEY}
+                encrKey: ${VOLSYNC_S3_ENCKEY}
         exportarrImage:
             pullPolicy: IfNotPresent
             repository: ghcr.io/onedr0p/exportarr

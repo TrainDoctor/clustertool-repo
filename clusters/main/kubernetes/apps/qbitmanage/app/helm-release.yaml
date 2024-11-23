@@ -42,14 +42,6 @@ spec:
                 mountPath: /data
                 readOnly: false
                 storageClass: ""
-                volsync:
-                    - credentials: qbitmanage
-                      dest:
-                        enabled: false
-                      name: appdata
-                      src:
-                        enabled: true
-                      type: restic
         release_name: qbitmanage
         resources: {}
         securityContext:

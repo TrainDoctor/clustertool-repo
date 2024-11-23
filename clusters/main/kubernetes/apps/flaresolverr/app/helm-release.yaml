@@ -30,17 +30,6 @@ spec:
             config:
                 enabled: true
                 mountPath: /config
-                readOnly: false
-                size: 1Gi
-                storageClass: ""
-                volsync:
-                    - credentials: flaresolverr
-                      dest:
-                        enabled: true
-                      name: cfg
-                      src:
-                        enabled: false
-                      type: restic
         release_name: flaresolverr
         resources: {}
         securityContext:
