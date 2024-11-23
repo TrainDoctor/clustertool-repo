@@ -44,7 +44,7 @@ spec:
         service:
             main:
                 enabled: true
-                loadBalancerIP: ""
+                loadBalancerIP: "192.168.0.211"
                 ports:
                     main:
                         port: 8191
