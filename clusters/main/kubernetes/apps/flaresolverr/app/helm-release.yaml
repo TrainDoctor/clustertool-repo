@@ -44,10 +44,12 @@ spec:
         service:
             main:
                 enabled: true
+                loadBalancerIP: ""
                 ports:
                     main:
                         port: 8191
-                type: ClusterIP
+                        targetPort: 8191
+                type: LoadBalancer
         workload:
             main:
                 podSpec:
