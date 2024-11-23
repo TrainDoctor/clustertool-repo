@@ -59,7 +59,7 @@ spec:
                 enabled: true
                 type: nfs
                 mountPath: /other
-                path: /mnt/PoolTwo/other
+                path: /mnt/PoolTwo/other/
                 server: ${MEDIA_LOCAL_NAS_IP}
         podOptions:
             hostNetwork: false
