@@ -23,7 +23,7 @@ spec:
                 enabled: false
             vpn:
                 type: gluetun
-                killSwitch: true
+                killSwitch: false
                 excludedNetworks_IPv4:
                     - "192.168.0.0/24"
                 env:
