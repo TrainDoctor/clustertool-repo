@@ -22,19 +22,21 @@ spec:
             netshoot:
                 enabled: false
             vpn:
-                configFile: ""
-                env:
-                    VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
-                    VPN_ENDPOINT_PORT: ${QBIT_VPN_ENDPOINT_PORT}
-                    VPN_SERVICE_PROVIDER: ${QBIT_VPN_SERVICE_PROVIDER}
-                    VPN_TYPE: wireguard
-                    WIREGUARD_ADDRESSES: ${QBIT_VPN_ADDRESSES}
-                    WIREGUARD_PRIVATE_KEY: ${QBIT_VPN_WG_PRIVATE_KEY}
-                    WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
-                excludedNetworks_IPv4:
-                    - 192.168.0.0/24
-                killSwitch: true
                 type: gluetun
+                killSwitch: true
+                excludedNetworks_IPv4:
+                    - "192.168.0.0/24"
+                env:
+                    VPN_TYPE: ${QBIT_VPN_TYPE}
+                    VPN_SERVICE_PROVIDER: ${QBIT_VPN_SERVICE_PROVIDER}
+                    WIREGUARD_PRIVATE_KEY: ${QBIT_VPN_WG_PRIVATE_KEY}
+                    FIREWALL_VPN_INPUT_PORTS: ${QBIT_VPN_INPUT_PORTS}
+                    WIREGUARD_ADDRESSES: ${QBIT_VPN_ADDRESSES}
+                    SERVER_CITIES: ${QBIT_VPN_CITIES}
+                    VPN_ENDPOINT_PORT: ${QBIT_VPN_ENDPOINT_PORT}
+                    WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
+                    VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
+                
         credentials:
             qbittorrent:
                 name: qbittorrent
