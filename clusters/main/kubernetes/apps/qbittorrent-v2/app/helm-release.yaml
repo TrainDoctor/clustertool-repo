@@ -93,6 +93,11 @@ spec:
         securityContext:
             container:
                 UMASK: "0022"
+                capabilities:
+                    add:
+                        - NET_ADMIN
+                        - NET_RAW
+                        - SYS_MODULE
                 readOnlyRootFilesystem: false
                 runAsGroup: ${MEDIA_GROUP}
                 runAsUser: ${MEDIA_USER}
