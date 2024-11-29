@@ -13,6 +13,17 @@ spec:
                 kind: HelmRepository
                 name: truecharts
                 namespace: flux-system
+    postRenderers:
+    - kustomize:
+        patches:
+          - target:
+              version: v1
+              kind: Deployment
+              name: qbittorrent
+            patch: |
+              - op: add
+                path: /spec/template/spec/containers/1/resources/limits/truecharts.org~1tun
+                value: 1
     releaseName: qbittorrent-v2
     values:
         TZ: America/Los_Angeles
