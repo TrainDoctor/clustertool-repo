@@ -36,6 +36,11 @@ spec:
                     VPN_ENDPOINT_PORT: ${QBIT_VPN_ENDPOINT_PORT}
                     WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
                     VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
+                securityContext:
+                container:
+                    capabilities:
+                        add:
+                            - SYS_MODULE
         credentials:
             qbittorrent:
                 name: qbittorrent
@@ -93,11 +98,6 @@ spec:
         securityContext:
             container:
                 UMASK: "0022"
-                capabilities:
-                    add:
-                        - NET_ADMIN
-                        - NET_RAW
-                        - SYS_MODULE
                 readOnlyRootFilesystem: false
                 runAsGroup: ${MEDIA_GROUP}
                 runAsUser: ${MEDIA_USER}
@@ -145,27 +145,27 @@ spec:
                                 QBT_Preferences__WebUI__Address: '*'
                 replicas: 1
                 type: Deployment
-            qbitportforward:
-                enabled: true
-                podSpec:
-                    # containers:
-                    #     qbitportforward:
-                    #         command: /usr/src/app/main.sh
-                    #         enabled: true
-                    #         env:
-                    #             GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
-                    #             QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
-                    #             QBT_PASSWORD: '{{ .Values.qbitportforward.QBT_PASSWORD }}'
-                    #             QBT_USERNAME: '{{ .Values.qbitportforward.QBT_USERNAME }}'
-                    #         imageSelector: qbitportforwardImage
-                    #         primary: true
-                    #         probes:
-                    #             liveness:
-                    #                 enabled: false
-                    #             readiness:
-                    #                 enabled: false
-                    #             startup:
-                    #                 enabled: false
+            # qbitportforward:
+            #     enabled: true
+            #     podSpec:
+            #         containers:
+            #             qbitportforward:
+            #                 command: /usr/src/app/main.sh
+            #                 enabled: true
+            #                 env:
+            #                     GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
+            #                     QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
+            #                     QBT_PASSWORD: '{{ .Values.qbitportforward.QBT_PASSWORD }}'
+            #                     QBT_USERNAME: '{{ .Values.qbitportforward.QBT_USERNAME }}'
+            #                 imageSelector: qbitportforwardImage
+            #                 primary: true
+            #                 probes:
+            #                     liveness:
+            #                         enabled: false
+            #                     readiness:
+            #                         enabled: false
+            #                     startup:
+            #                         enabled: false
                     restartPolicy: OnFailure
                 schedule: '*/5 * * * *'
                 type: CronJob
