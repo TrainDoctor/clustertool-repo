@@ -81,14 +81,14 @@ spec:
                 mountPath: /downloads/temp
                 path: /mnt/PoolTwo/data/downloads/temp
                 server: ${MEDIA_LOCAL_NAS_IP}
-        qbitportforward:
-            QBT_PASSWORD: adminadmin
-            QBT_USERNAME: admin
-            enabled: false
-        qbitportforwardImage:
-            pullPolicy: IfNotPresent
-            repository: mjmeli/qbittorrent-port-forward-gluetun-server
-            tag: latest@sha256:67d0d21ed792cf80716d4211e7162b6d375af5c12f3cf096c9032ad705dddaa8
+        # qbitportforward:
+        #     QBT_PASSWORD: adminadmin
+        #     QBT_USERNAME: admin
+        #     enabled: false
+        # qbitportforwardImage:
+        #     pullPolicy: IfNotPresent
+        #     repository: mjmeli/qbittorrent-port-forward-gluetun-server
+        #     tag: latest@sha256:67d0d21ed792cf80716d4211e7162b6d375af5c12f3cf096c9032ad705dddaa8
         release_name: qbittorrent-v2
         resources: {}
         securityContext:
