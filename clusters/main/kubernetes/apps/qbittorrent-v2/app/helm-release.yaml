@@ -34,9 +34,10 @@ spec:
                 enabled: false
             vpn:
                 type: gluetun
-                killSwitch: false
+                killSwitch: true
                 excludedNetworks_IPv4:
                     - "192.168.0.0/24"
+                excludedNetworks_IPv6: []
                 env:
                     VPN_TYPE: wireguard
                     VPN_SERVICE_PROVIDER: mullvad
@@ -48,10 +49,10 @@ spec:
                     WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
                     VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
                 securityContext:
-                container:
-                    capabilities:
-                        add:
-                            - SYS_MODULE
+                # container:
+                #     capabilities:
+                #         add:
+                #             - SYS_MODULE
         credentials:
             qbittorrent:
                 name: qbittorrent
