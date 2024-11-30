@@ -107,7 +107,7 @@ spec:
         #     pullPolicy: IfNotPresent
         #     repository: mjmeli/qbittorrent-port-forward-gluetun-server
         #     tag: latest@sha256:67d0d21ed792cf80716d4211e7162b6d375af5c12f3cf096c9032ad705dddaa8
-        # release_name: qbittorrent-v2
+        release_name: qbittorrent-v2
         resources: {}
         securityContext:
             container:
@@ -118,15 +118,15 @@ spec:
             pod:
                 fsGroupChangePolicy: OnRootMismatch
         service:
-            # gluetun:
-            #     enabled: true
-            #     ports:
-            #         gluetun:
-            #             enabled: true
-            #             port: 8000
-            #             protocol: http
-            #             targetPort: 8000
-            #     type: ClusterIP
+            gluetun:
+                enabled: true
+                ports:
+                    gluetun:
+                        enabled: true
+                        port: 8000
+                        protocol: http
+                        targetPort: 8000
+                type: ClusterIP
             main:
                 enabled: true
                 loadBalancerIP: ""
