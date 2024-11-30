@@ -129,14 +129,14 @@ metadata:
             #     type: ClusterIP
             main:
                 enabled: true
-                loadBalancerIP: "192.168.0.219"
+                loadBalancerIP: ""
                 ports:
                     main:
                         port: 10095
                 type: LoadBalancer
             torrent:
                 enabled: true
-                loadBalancerIP: "192.168.0.219"
+                loadBalancerIP: ""
                 ports:
                     torrent:
                         enabled: true
@@ -181,5 +181,5 @@ metadata:
             #                     startup:
             #                         enabled: false
             #         restartPolicy: OnFailure
-                schedule: '*/5 * * * *'
-                type: CronJob
+                # schedule: '*/5 * * * *'
+                # type: CronJob
