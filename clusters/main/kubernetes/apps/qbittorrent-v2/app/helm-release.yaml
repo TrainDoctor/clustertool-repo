@@ -48,7 +48,7 @@ spec:
                     VPN_ENDPOINT_PORT: ${QBIT_VPN_ENDPOINT_PORT}
                     WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
                     VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
-                securityContext:
+                # securityContext:
                 # container:
                 #     capabilities:
                 #         add:
