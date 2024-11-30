@@ -118,15 +118,15 @@ metadata:
             pod:
                 fsGroupChangePolicy: OnRootMismatch
         service:
-            gluetun:
-                enabled: true
-                ports:
-                    gluetun:
-                        enabled: true
-                        port: 8000
-                        protocol: http
-                        targetPort: 8000
-                type: ClusterIP
+            # gluetun:
+            #     enabled: true
+            #     ports:
+            #         gluetun:
+            #             enabled: true
+            #             port: 8000
+            #             protocol: http
+            #             targetPort: 8000
+            #     type: ClusterIP
             main:
                 enabled: true
                 loadBalancerIP: "192.168.0.219"
