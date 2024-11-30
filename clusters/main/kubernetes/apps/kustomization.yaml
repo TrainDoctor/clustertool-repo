@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - kubernetes-dashboard/ks.yaml
+  - generic-device-plugin/ks.yaml
   - cloudflareddns/ks.yaml
   - flaresolverr/ks.yaml
   - jellyfin/ks.yaml
@@ -16,4 +17,3 @@ resources:
   - syncthing/ks.yaml
   - tubesync/ks.yaml
   - wg-easy/ks.yaml
-  - generic-device-plugin/ks.yaml
