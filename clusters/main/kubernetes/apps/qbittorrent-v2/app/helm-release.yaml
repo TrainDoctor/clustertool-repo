@@ -11,7 +11,7 @@ spec:
         - target:
             version: v1
             kind: Deployment
-            name: deluge
+            name: qbittorrent-v2
           patch: |
             - op: add
               path: /spec/template/spec/containers/1/resources/limits/truecharts.org~1tun
