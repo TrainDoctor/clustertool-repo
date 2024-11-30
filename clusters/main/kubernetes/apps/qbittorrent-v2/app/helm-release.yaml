@@ -10,7 +10,7 @@ spec:
           - target:
               version: v1
               kind: Deployment
-              name: qbittorrent
+              name: qbittorrent-v2
             patch: |
               - op: add
                 path: /spec/template/spec/containers/1/resources/limits/truecharts.org~1tun
@@ -105,9 +105,7 @@ spec:
             repository: mjmeli/qbittorrent-port-forward-gluetun-server
             tag: latest@sha256:67d0d21ed792cf80716d4211e7162b6d375af5c12f3cf096c9032ad705dddaa8
         release_name: qbittorrent-v2
-        resources:
-            limits:
-                kernel.org/tun: 1
+        resources: {}
         securityContext:
             container:
                 UMASK: "0022"
