@@ -15,5 +15,4 @@ resources:
   - readarr/ks.yaml
   - sonarr/ks.yaml
   - syncthing/ks.yaml
-  - tubesync/ks.yaml
   - wg-easy/ks.yaml
