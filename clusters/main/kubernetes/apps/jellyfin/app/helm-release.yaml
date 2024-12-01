@@ -61,12 +61,12 @@ spec:
             #     mountPath: /config/transcodes
             #     readOnly: false
             #     storageClass: ""
-            # media-vol:
-            #     enabled: true
-            #     type: nfs
-            #     mountPath: /data/media
-            #     path: /mnt/PoolTwo/data/media
-            #     server: ${MEDIA_LOCAL_NAS_IP}
+            media-vol:
+                enabled: true
+                type: nfs
+                mountPath: /data/media
+                path: /mnt/PoolTwo/data/media
+                server: ${MEDIA_LOCAL_NAS_IP}
         release_name: jellyfin
         resources: {}
         securityContext:
