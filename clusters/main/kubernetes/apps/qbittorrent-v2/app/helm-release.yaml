@@ -180,6 +180,7 @@ spec:
                                     enabled: false
                                 startup:
                                     enabled: false
+                    hostNetwork: true
                     restartPolicy: OnFailure
                 schedule: '*/5 * * * *'
                 type: CronJob
