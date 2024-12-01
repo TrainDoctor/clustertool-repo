@@ -129,14 +129,14 @@ spec:
                 type: ClusterIP
             main:
                 enabled: true
-                loadBalancerIP: "192.168.0.218"
+                # loadBalancerIP: ""
                 ports:
                     main:
                         port: 10095
                 type: LoadBalancer
             torrent:
                 enabled: true
-                loadBalancerIP: "192.168.0.218"
+                # loadBalancerIP: ""
                 ports:
                     torrent:
                         enabled: true
@@ -147,40 +147,40 @@ spec:
                         port: '{{ .Values.service.torrent.ports.torrent.port }}'
                         protocol: udp
                 type: LoadBalancer
-        workload:
-            main:
-                podSpec:
-                    containers:
-                        main:
-                            env:
-                                QBITTORRENT__PORT: '{{ .Values.service.main.ports.main.port }}'
-                                QBT_BitTorrent__Session__Port: '{{ .Values.service.torrent.ports.torrent.port }}'
-                                QBT_Preferences__Connection__PortRangeMin: '{{ .Values.service.torrent.ports.torrent.port }}'
-                                QBT_Preferences__WebUI__Address: '*'
-                replicas: 1
-                type: Deployment
-            qbitportforward:
-                enabled: true
-                podSpec:
-                    containers:
-                        qbitportforward:
-                            command: /usr/src/app/main.sh
-                            enabled: true
-                            env:
-                                GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
-                                QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
-                                QBT_PASSWORD: '{{ .Values.qbitportforward.QBT_PASSWORD }}'
-                                QBT_USERNAME: '{{ .Values.qbitportforward.QBT_USERNAME }}'
-                            imageSelector: qbitportforwardImage
-                            primary: true
-                            probes:
-                                liveness:
-                                    enabled: false
-                                readiness:
-                                    enabled: false
-                                startup:
-                                    enabled: false
-                    hostNetwork: true
-                    restartPolicy: OnFailure
-                schedule: '*/5 * * * *'
-                type: CronJob
+        # workload:
+        #     main:
+        #         podSpec:
+        #             containers:
+        #                 main:
+        #                     env:
+        #                         QBITTORRENT__PORT: '{{ .Values.service.main.ports.main.port }}'
+        #                         QBT_BitTorrent__Session__Port: '{{ .Values.service.torrent.ports.torrent.port }}'
+        #                         QBT_Preferences__Connection__PortRangeMin: '{{ .Values.service.torrent.ports.torrent.port }}'
+        #                         QBT_Preferences__WebUI__Address: '*'
+        #         replicas: 1
+        #         type: Deployment
+        #     qbitportforward:
+        #         enabled: true
+        #         podSpec:
+        #             containers:
+        #                 qbitportforward:
+        #                     command: /usr/src/app/main.sh
+        #                     enabled: true
+        #                     env:
+        #                         GTN_ADDR: '{{ printf "http://%v-gluetun:8000" (include "tc.v1.common.lib.chart.names.fullname" $) }}'
+        #                         QBT_ADDR: '{{ printf "http://%v:%v" (include "tc.v1.common.lib.chart.names.fullname" $) .Values.service.main.ports.main.port }}'
+        #                         QBT_PASSWORD: '{{ .Values.qbitportforward.QBT_PASSWORD }}'
+        #                         QBT_USERNAME: '{{ .Values.qbitportforward.QBT_USERNAME }}'
+        #                     imageSelector: qbitportforwardImage
+        #                     primary: true
+        #                     probes:
+        #                         liveness:
+        #                             enabled: false
+        #                         readiness:
+        #                             enabled: false
+        #                         startup:
+        #                             enabled: false
+        #             hostNetwork: true
+        #             restartPolicy: OnFailure
+        #         schedule: '*/5 * * * *'
+        #         type: CronJob
