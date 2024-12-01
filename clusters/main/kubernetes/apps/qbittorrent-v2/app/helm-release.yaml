@@ -48,13 +48,13 @@ spec:
                     VPN_ENDPOINT_PORT: ${QBIT_VPN_ENDPOINT_PORT}
                     WIREGUARD_PUBLIC_KEY: ${QBIT_VPN_WG_PUBLIC_KEY}
                     VPN_ENDPOINT_IP: ${QBIT_VPN_ENDPOINT_IP}
-                # securityContext:
-                # container:
-                #     capabilities:
-                #         add:
-                #             - SYS_MODULE
-                #             - NET_ADMIN
-                #             - NET_RAW
+                securityContext:
+                container:
+                    capabilities:
+                        add:
+                            - SYS_MODULE
+                            - NET_ADMIN
+                            - NET_RAW
         credentials:
             qbittorrent:
                 name: qbittorrent
