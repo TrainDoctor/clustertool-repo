@@ -129,14 +129,14 @@ spec:
                 type: ClusterIP
             main:
                 enabled: true
-                loadBalancerIP: "${UTILITY_TOOLS_IP}"
+                loadBalancerIP: ""
                 ports:
                     main:
                         port: 10095
                 type: LoadBalancer
             torrent:
                 enabled: true
-                loadBalancerIP: "${UTILITY_TOOLS_IP}"
+                loadBalancerIP: ""
                 ports:
                     torrent:
                         enabled: true
