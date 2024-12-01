@@ -130,7 +130,7 @@ spec:
                                     type: exec
                             securityContext:
                                 readOnlyRootFilesystem: true
-                    hostNetwork: true
+                    hostNetwork: false
                     terminationGracePeriodSeconds: 3
                 type: DaemonSet
             main:
