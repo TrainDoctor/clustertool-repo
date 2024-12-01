@@ -88,7 +88,6 @@ spec:
                         targetPort: 7359
             main:
                 enabled: true
-                loadBalancerIP: ""
                 ports:
                     main:
                         port: 8096
