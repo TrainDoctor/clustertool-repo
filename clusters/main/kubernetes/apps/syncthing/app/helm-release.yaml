@@ -75,7 +75,6 @@ spec:
         service:
             discovery:
                 enabled: true
-                loadBalancerIP: "${UTILITY_TOOLS_IP}"
                 ports:
                     discovery:
                         enabled: true
@@ -85,7 +84,6 @@ spec:
                 type: LoadBalancer
             listeners:
                 enabled: true
-                loadBalancerIP: "${UTILITY_TOOLS_IP}"
                 ports:
                     tcp:
                         enabled: true
@@ -94,7 +92,6 @@ spec:
                 type: LoadBalancer
             listeners-udp:
                 enabled: true
-                loadBalancerIP: "${UTILITY_TOOLS_IP}"
                 ports:
                     udp:
                         enabled: true
@@ -104,7 +101,6 @@ spec:
                 type: LoadBalancer
             main:
                 enabled: true
-                loadBalancerIP: "${UTILITY_TOOLS_IP}"
                 ports:
                     main:
                         port: 8384
