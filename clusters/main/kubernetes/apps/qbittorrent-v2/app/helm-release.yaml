@@ -87,7 +87,7 @@ spec:
                 volsync:
                     - credentials: qbittorrent
                       dest:
-                        enabled: true
+                        enabled: false
                       name: cfg
                       src:
                         enabled: false
