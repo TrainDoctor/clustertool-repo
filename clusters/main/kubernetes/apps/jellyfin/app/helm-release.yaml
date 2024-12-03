@@ -39,7 +39,6 @@ spec:
                 enabled: false
         persistence:
             config:
-                mountPath: /config
                 volsync:
                     - credentials: jellyfin
                       dest:
