@@ -65,7 +65,7 @@ spec:
           traefik:
             enabled: false
         hosts:
-          - host: traefik.traefik.svc.cluster.local
+          - host: traefik.${DOMAIN_0}
             paths:
               - path: /
                 pathType: Prefix
