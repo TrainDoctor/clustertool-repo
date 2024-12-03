@@ -71,6 +71,7 @@ spec:
                 readOnlyRootFilesystem: false
                 runAsGroup: ${MEDIA_GROUP}
                 runAsUser: ${MEDIA_USER}
+                hostNetwork: false
             pod:
                 fsGroupChangePolicy: OnRootMismatch
         service:
