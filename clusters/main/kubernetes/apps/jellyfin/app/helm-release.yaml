@@ -36,7 +36,9 @@ spec:
                 encrKey: ${VOLSYNC_S3_ENCKEY}
             ingress:
             main:
-                enabled: false
+                enabled: true
+                    hosts:
+                        - host: jf.${DOMAIN_0}
         persistence:
             config:
                 volsync:
