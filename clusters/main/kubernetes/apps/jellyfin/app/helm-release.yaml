@@ -46,6 +46,9 @@ spec:
                             middlewares:
                             - name: local
                                 namespace: traefik
+                        certManager:
+                            enabled: true
+                            certificateIssuer: ${CERT_ISSUER}
         persistence:
             config:
                 volsync:
