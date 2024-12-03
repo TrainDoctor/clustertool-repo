@@ -31,7 +31,7 @@ spec:
         #     tag: 1.8.0.0@sha256:242ddfab3d263db7c0b2f193dd53e0bea3b6cbc0984af7bc63998e4aa597d1a3
         credentials:
             jellyfin:
-                name: ${VOLSYNC_CRED_NAME}
+                name: jellyfin
                 type: s3
                 url: ${VOLSYNC_S3_URL}
                 bucket: ${VOLSYNC_S3_BUCKET}
@@ -49,7 +49,7 @@ spec:
             config:
                 mountPath: /config
                 volsync:
-                    - credentials: ${VOLSYNC_CRED_NAME}
+                    - credentials: jellyfin
                       dest:
                         enabled: true
                       name: cfg
