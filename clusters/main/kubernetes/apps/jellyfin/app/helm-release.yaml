@@ -38,7 +38,7 @@ spec:
             main:
                 enabled: true
                     hosts:
-                        - host: jf.${DOMAIN_0}
+                        - host: tv.${DOMAIN_0}
                               traefik:
                     integrations:
                         traefik:
