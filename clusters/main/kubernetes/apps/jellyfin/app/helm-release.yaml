@@ -39,6 +39,13 @@ spec:
                 enabled: true
                     hosts:
                         - host: jf.${DOMAIN_0}
+                              traefik:
+                    integrations:
+                        traefik:
+                            enabled: true
+                            middlewares:
+                            - name: local
+                                namespace: traefik
         persistence:
             config:
                 volsync:
