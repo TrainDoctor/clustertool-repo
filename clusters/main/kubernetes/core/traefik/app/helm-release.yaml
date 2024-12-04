@@ -42,6 +42,7 @@ spec:
         type: ClusterIP
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
+        externalTrafficPolicy: Local
         # ports:
         #   # this is passed through from the router
         #   # the app is supposed to auth these!
