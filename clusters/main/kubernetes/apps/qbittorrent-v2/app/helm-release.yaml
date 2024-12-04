@@ -74,7 +74,7 @@ spec:
                 enabled: true
                 middlewares:
                 - name: local
-                    namespace: traefik
+                  namespace: traefik
             certManager:
                 enabled: true
                 certificateIssuer: ${CERT_ISSUER}
