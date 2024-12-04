@@ -65,7 +65,7 @@ spec:
           ## NOTE: traefik integration must be set to false if installing traefik
           ##       for the first time!
           traefik:
-            enabled: false
+            enabled: true
         hosts:
           - host: traefik.${DOMAIN_0}
             paths:
