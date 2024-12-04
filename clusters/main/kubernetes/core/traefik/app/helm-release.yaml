@@ -38,9 +38,8 @@ spec:
       stopAll: false
     defaultCertificate: "domain-0-wildcard"
     service:
-      # main:
-      #   type: LoadBalancer
-      #   loadBalancerIP: ${TRAEFIK_IP}
+      main:
+        type: ClusterIP
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
         # ports:
