@@ -43,21 +43,21 @@ spec:
         loadBalancerIP: ${TRAEFIK_IP}
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
-        ports:
-          # this is passed through from the router
-          # the app is supposed to auth these!
-          extwebsecure:
-            enabled: true
-            name: extwebsecure
-            forwardedHeaders:
-              enabled: true
-            port: 444
-            protocol: https
-            proxyProtocol:
-              enabled: false
-              insecureMode: false
-            tls:
-              enabled: true
+        # ports:
+        #   # this is passed through from the router
+        #   # the app is supposed to auth these!
+        #   extwebsecure:
+        #     enabled: true
+        #     name: extwebsecure
+        #     forwardedHeaders:
+        #       enabled: true
+        #     port: 444
+        #     protocol: https
+        #     proxyProtocol:
+        #       enabled: false
+        #       insecureMode: false
+        #     tls:
+        #       enabled: true
     ingress:
       main:
         enabled: true
