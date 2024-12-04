@@ -36,5 +36,60 @@ spec:
       stopAll: false
     defaultCertificate: "domain-0-wildcard"
     service:
-      tcp:
-        loadBalancerIP: ${TRAEFIK_IP}
+          main:
+            type: ClusterIP
+          tcp:
+            loadBalancerIP: ${TRAEFIK_IP}
+            externalTrafficPolicy: Local
+            ports:
+              web:
+                enabled: true
+                port: 80
+                protocol: http
+                redirectTo: websecure
+              websecure:
+                enabled: true
+                port: 443
+                protocol: https
+                # -- Configure (Forwarded Headers)[https://doc.traefik.io/traefik/routing/entrypoints/#forwarded-headers] Support
+                forwardedHeaders:
+                  enabled: true
+                  # -- List of trusted IP and CIDR references
+                  trustedIPs:
+                    - 172.16.0.0/16
+                    - 172.17.0.0/16
+                    - 192.168.0.0/24
+                    - 10.8.0.0/24
+                  # -- Trust all forwarded headers
+                  insecureMode: false
+                  # -- Configure (Proxy Protocol Headers)[https://doc.traefik.io/traefik/routing/entrypoints/#proxyprotocol] Support
+                proxyProtocol:
+                  enabled: true
+                  # -- Only IPs in trustedIPs will lead to remote client address replacement
+                  trustedIPs: []
+                  # -- Trust every incoming connection
+                  insecureMode: false
+    ingress:
+      main:
+        enabled: true
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: local
+                namespace: traefik
+        hosts:
+          - host: traefik.${BASE_DOMAIN}
+            paths:
+              - path: /dashboard
+                pathType: Prefix
+              - path: /api
+                pathType: Prefix          
+    middlewares:
+      ipWhiteList:
+        - name: local
+          sourceRange:
+            - 172.16.0.0/16
+            - 172.17.0.0/16
+            - 192.168.0.0/24
+            - 10.8.0.0/24
