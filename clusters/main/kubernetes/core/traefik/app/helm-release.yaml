@@ -40,7 +40,7 @@ spec:
     service:
       main:
         type: LoadBalancer
-        loadBalancerIP: 192.168.0.221
+        loadBalancerIP: ${TRAEFIK_IP}
       tcp:
         loadBalancerIP: ${TRAEFIK_IP}
         ports:
