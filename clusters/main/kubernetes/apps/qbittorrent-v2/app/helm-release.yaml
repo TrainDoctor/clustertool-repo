@@ -140,14 +140,16 @@ spec:
                 type: ClusterIP
             main:
                 enabled: true
-                loadBalancerIP: ""
+                sharedKey: custom-shared-key
+                loadBalancerIP: "${SERVICES_IP}"
                 ports:
                     main:
                         port: 10095
                 type: LoadBalancer
             torrent:
                 enabled: true
-                loadBalancerIP: ""
+                sharedKey: custom-shared-key
+                loadBalancerIP: "${SERVICES_IP}"
                 ports:
                     torrent:
                         enabled: true

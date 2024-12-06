@@ -72,14 +72,14 @@ spec:
         service:
             main:
                 enabled: true
-                loadBalancerIP: ""
+                loadBalancerIP: "${SERVICES_IP}"
                 ports:
                     main:
                         port: ${WG_UI_PORT}
                 type: LoadBalancer
             vpn:
                 enabled: true
-                loadBalancerIP: ""
+                loadBalancerIP: "${SERVICES_IP}"
                 ports:
                     vpn:
                         enabled: true

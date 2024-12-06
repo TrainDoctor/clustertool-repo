@@ -91,7 +91,8 @@ spec:
         service:
             main:
                 enabled: true
-                loadBalancerIP: ""
+                sharedKey: custom-shared-key
+                loadBalancerIP: "${MEDIA_IP}"
                 ports:
                     main:
                         port: 8787
