@@ -52,7 +52,7 @@ spec:
                         enabled: false
                       type: restic
         podOptions:
-            hostNetwork: true
+            hostNetwork: false
         release_name: jellyseerr
         resources: {}
         securityContext:
