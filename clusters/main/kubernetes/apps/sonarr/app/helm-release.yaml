@@ -78,7 +78,7 @@ spec:
                 path: /mnt/PoolTwo/data
                 server: ${MEDIA_LOCAL_NAS_IP}
         podOptions:
-            hostNetwork: true
+            hostNetwork: false
         release_name: sonarr
         resources: {}
         securityContext:
