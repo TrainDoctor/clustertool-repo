@@ -40,6 +40,11 @@ spec:
                     integrations:
                         traefik:
                             enabled: true
+                            entrypoints:
+                            - websecure
+                            enableFixedMiddlewares: true
+                            forceTLS: true
+                            allowCors: false
                             middlewares:
                             - name: local
                               namespace: traefik
@@ -59,10 +64,10 @@ spec:
                 volsync:
                     - credentials: jellyfin
                       dest:
-                        enabled: true
+                        enabled: false
                       name: cfg
                       src:
-                        enabled: false
+                        enabled: true
                       type: restic
             # cache:
             #     enabled: true
