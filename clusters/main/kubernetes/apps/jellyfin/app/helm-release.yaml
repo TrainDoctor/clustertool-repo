@@ -108,6 +108,43 @@ spec:
                 type: LoadBalancer
         updated: true
         workload:
+            broadcastproxy:
+                enabled: false
+                podSpec:
+                    containers:
+                        broadcastproxy:
+                            args:
+                                - -c
+                                - export TARGET_IP=$(getent hosts '{{ printf "%v-autodiscovery" (include "tc.v1.common.lib.chart.names.fullname" $) }}' | awk '{ print $1 }') && [[ ! -z $TARGET_IP ]] && touch /tmp/healthy && socat UDP4-LISTEN:7359,fork,reuseaddr,rcvbuf=8096 UDP4-SENDTO:${TARGET_IP}:7359,rcvbuf=8096 ; rm -rf /tmp/healthy
+                            command:
+                                - /bin/sh
+                            enabled: true
+                            imageSelector: broadcastProxyImage
+                            primary: true
+                            probes:
+                                liveness:
+                                    command:
+                                        - cat
+                                        - /tmp/healthy
+                                    enabled: true
+                                    type: exec
+                                readiness:
+                                    command:
+                                        - cat
+                                        - /tmp/healthy
+                                    enabled: true
+                                    type: exec
+                                startup:
+                                    command:
+                                        - cat
+                                        - /tmp/healthy
+                                    enabled: true
+                                    type: exec
+                            securityContext:
+                                readOnlyRootFilesystem: true
+                    hostNetwork: false
+                    terminationGracePeriodSeconds: 3
+                type: DaemonSet
             main:
                 podSpec:
                     containers:
