@@ -37,9 +37,6 @@ spec:
             ingress:
                 main:
                     enabled: true
-                    hosts:
-                        # - host: tv.${DOMAIN_0}
-                        - host: jf.${DOMAIN_0}
                     integrations:
                         traefik:
                             enabled: true
@@ -49,6 +46,11 @@ spec:
                         certManager:
                             enabled: true
                             certificateIssuer: ${CERT_ISSUER}
+                    hosts:
+                        - host: jf.${DOMAIN_0}
+                          paths:
+                            - path: /
+                              pathType: Prefix
         persistence:
             config:
                 volsync:
