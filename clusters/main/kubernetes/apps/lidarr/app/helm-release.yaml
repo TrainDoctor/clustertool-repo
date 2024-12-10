@@ -65,10 +65,10 @@ spec:
                 volsync:
                     - credentials: lidarr
                       dest:
-                        enabled: true
+                        enabled: false
                       name: cfg
                       src:
-                        enabled: false
+                        enabled: true
                       type: restic
             data-vol:
                 enabled: true
