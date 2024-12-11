@@ -95,7 +95,8 @@ spec:
                         main:
                             env:
                                 LANG: en
-                                PASSWORD: ${WG_PASSWORD}
+                                # PASSWORD: ${WG_PASSWORD}
+                                PASSWORD_HASH: ${WG_PASSWORD_HASH}
                                 PORT: '{{ .Values.service.main.ports.main.port }}'
                                 UI_TRAFFIC_STATS: false
                                 WG_ALLOWED_IPS: 0.0.0.0/0, ::/0
