@@ -16,7 +16,7 @@ spec:
     releaseName: jellyseerr
     values:
         global:
-            stopAll: false
+            stopAll: true
         TZ: America/Los_Angeles
         addons:
             codeserver:
@@ -82,5 +82,6 @@ spec:
                                 JELLYFIN_TYPE: ""
                                 LOG_LEVEL: info
                                 PORT: '{{ .Values.service.main.ports.main.port }}'
+                                API_KEY: 
                 replicas: 1
                 type: Deployment
