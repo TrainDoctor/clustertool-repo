@@ -74,20 +74,22 @@ spec:
         service:
             main:
                 enabled: true
-                type: LoadBalancer
+                sharedKey: custom-shared-key
                 loadBalancerIP: ${SERVICES_IP}
                 ports:
                     main:
-                        port: ${WG_UI_PORT}
+                        port: 51821
+                type: LoadBalancer
             vpn:
                 enabled: true
-                type: LoadBalancer
+                sharedKey: custom-shared-key
                 loadBalancerIP: ${SERVICES_IP}
                 ports:
                     vpn:
                         enabled: true
-                        port: ${WG_VPN_PORT}
+                        port: 51820
                         protocol: udp
+                type: LoadBalancer
         workload:
             main:
                 podSpec:
