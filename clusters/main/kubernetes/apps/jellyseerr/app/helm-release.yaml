@@ -15,6 +15,8 @@ spec:
                 namespace: flux-system
     releaseName: jellyseerr
     values:
+        global:
+            stopAll: false
         TZ: America/Los_Angeles
         addons:
             codeserver:
