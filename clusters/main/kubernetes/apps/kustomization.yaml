@@ -16,3 +16,4 @@ resources:
   - sonarr/ks.yaml
   - syncthing/ks.yaml
   - wg-easy/ks.yaml
+  - steam-headless/ks.yaml
