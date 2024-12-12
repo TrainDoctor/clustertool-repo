@@ -71,7 +71,7 @@ spec:
         securityContext:
             container:
                 UMASK: "0022"
-                privileged: false
+                privileged: true
                 readOnlyRootFilesystem: false
                 runAsGroup: ${MEDIA_GROUP}
                 runAsUser: ${MEDIA_USER}
@@ -86,3 +86,32 @@ spec:
                     main:
                         port: 8083
                 type: LoadBalancer
+        workload:
+          main:
+            podSpec:
+            containers:
+                main:
+                probes:
+                    liveness:
+                        enabled: false
+                    readiness:
+                        enabled: false
+                    startup:
+                        enabled: false
+                env:
+                    PORT_NOVNC_WEB: "{{ .Values.service.main.ports.main.port }}"
+                    MODE: "primary"
+                    # MODE = secondary
+                    # DISPLAY: :0
+                    # HOST_DBUS: true
+                    WEB_UI_MODE: "vnc"
+                    ENABLE_VNC_AUDIO: false
+                    # NEKO_NAT1TO1: "" needs to be the ip of the host
+                    ENABLE_SUNSHINE: false
+                    # SUNSHINE_USER: ""
+                    # SUNSHINE_PASS: ""
+                    # USER_PASSWORD: ""
+                    ENABLE_EVDEV_INPUTS: false
+        portal:
+          open:
+            enabled: true
