@@ -85,6 +85,27 @@ spec:
                 ports:
                     main:
                         port: 8083
+                    steam-udp-27031:
+                        port: 27031
+                        protocol: udp
+                    steam-udp-27032:
+                        port: 27032
+                        protocol: udp
+                    steam-udp-27033:
+                        port: 27033
+                        protocol: udp
+                    steam-udp-27034:
+                        port: 27034
+                        protocol: udp
+                    steam-udp-27035:
+                        port: 27035
+                        protocol: udp
+                    steam-udp-27036:
+                        port: 27036
+                        protocol: udp
+                    steam-tcp-27040:
+                        port: 27040
+                        protocol: tcp
                 type: LoadBalancer
         workload:
           main:
@@ -112,6 +133,7 @@ spec:
                     # SUNSHINE_PASS: ""
                     # USER_PASSWORD: ""
                     ENABLE_EVDEV_INPUTS: false
+                    ENABLE_STEAM: true
         portal:
           open:
             enabled: true
