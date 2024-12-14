@@ -59,10 +59,6 @@ spec:
                 size: ""
                 storageClass: ""
                 targetSelector:
-                    exportarr:
-                        exportarr:
-                            mountPath: /config
-                            readOnly: true
                     main:
                         main:
                             mountPath: /config
@@ -99,15 +95,6 @@ spec:
                     main:
                         port: 9696
                 type: LoadBalancer
-            metrics:
-                enabled: true
-                ports:
-                    metrics:
-                        enabled: true
-                        port: 9697
-                        targetSelector: exportarr
-                targetSelector: exportarr
-                type: ClusterIP
         updated: true
         workload:
             main:

@@ -32,10 +32,6 @@ spec:
                 accessKey: ${VOLSYNC_S3_ACCESSKEY}
                 secretKey: ${VOLSYNC_S3_SECRETKEY}
                 encrKey: ${VOLSYNC_S3_ENCKEY}
-        exportarrImage:
-            pullPolicy: IfNotPresent
-            repository: ghcr.io/onedr0p/exportarr
-            tag: v2.0.1@sha256:727e7bc8f2f0934a2117978c59f4476b954018b849a010ea6cfb380bd6539644
         ingress:
             main:
                 enabled: false
@@ -56,10 +52,6 @@ spec:
                 size: ""
                 storageClass: ""
                 targetSelector:
-                    exportarr:
-                        exportarr:
-                            mountPath: /config
-                            readOnly: true
                     main:
                         main:
                             mountPath: /config
@@ -96,15 +88,6 @@ spec:
                     main:
                         port: 7878
                 type: LoadBalancer
-            metrics:
-                enabled: true
-                ports:
-                    metrics:
-                        enabled: true
-                        port: 7879
-                        targetSelector: exportarr
-                targetSelector: exportarr
-                type: ClusterIP
         updated: true
         workload:
             main:

@@ -52,10 +52,6 @@ spec:
                 size: 1Gi
                 storageClass: ""
                 targetSelector:
-                    exportarr:
-                        exportarr:
-                            mountPath: /config
-                            readOnly: true
                     main:
                         main:
                             mountPath: /config
@@ -93,16 +89,7 @@ spec:
                     main:
                         port: 8787
                 type: LoadBalancer
-            metrics:
-                enabled: true
-                ports:
-                    metrics:
-                        enabled: true
-                        port: 8788
-                        targetSelector: exportarr
-                targetSelector: exportarr
-                type: ClusterIP
-        updated:
+        updated: true
         workload:
             main:
                 podSpec:
