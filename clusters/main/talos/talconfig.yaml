@@ -64,6 +64,8 @@ nodes:
         size: <= 1600GB
       schematic:
           customization:
+              extraKernelArgs:
+                - user.max_user_namespaces=124073
               systemExtensions:
                   officialExtensions:
                       - siderolabs/amd-ucode
@@ -78,6 +80,8 @@ nodes:
         size: <= 1600GB
       schematic:
           customization:
+              extraKernelArgs:
+                - user.max_user_namespaces=124073
               systemExtensions:
                   officialExtensions:
                       - siderolabs/amd-ucode
@@ -133,6 +137,8 @@ worker:
      - name: uio_pci_generic
     schematic:
         customization:
+            extraKernelArgs:
+                - user.max_user_namespaces=124073
             systemExtensions:
                 officialExtensions:
                     - siderolabs/util-linux-tools
