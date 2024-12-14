@@ -92,15 +92,6 @@ spec:
                     main:
                         port: 8686
                 type: LoadBalancer
-            metrics:
-                enabled: true
-                ports:
-                    metrics:
-                        enabled: true
-                        port: 8687
-                        targetSelector: exportarr
-                targetSelector: exportarr
-                type: ClusterIP
         updated: true
         workload:
             main:
