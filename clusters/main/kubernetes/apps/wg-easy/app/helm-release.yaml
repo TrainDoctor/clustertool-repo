@@ -45,10 +45,10 @@ spec:
                 volsync:
                     - credentials: wg-easy
                       dest:
-                        enabled: false
+                        enabled: true
                       name: cfg
                       src:
-                        enabled: true
+                        enabled: false
                       type: restic
         podOptions:
             hostNetwork: true

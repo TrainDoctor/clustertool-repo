@@ -62,10 +62,10 @@ spec:
                 volsync:
                     - credentials: readarr
                       dest:
-                        enabled: false
+                        enabled: true
                       name: cfg
                       src:
-                        enabled: true
+                        enabled: false
                       type: restic
             data-vol:
                 enabled: true

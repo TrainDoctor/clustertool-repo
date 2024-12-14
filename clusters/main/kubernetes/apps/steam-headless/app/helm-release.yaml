@@ -44,10 +44,10 @@ spec:
                 volsync:
                     - credentials: steam-headless
                       dest:
-                        enabled: false
+                        enabled: true
                       name: cfg
                       src:
-                        enabled: true
+                        enabled: fals
                       type: restic
             games:
                 enabled: true
@@ -61,10 +61,10 @@ spec:
                 volsync:
                     - credentials: steam-headless
                       dest:
-                        enabled: false
+                        enabled: true
                       name: cfg
                       src:
-                        enabled: true
+                        enabled: false
                       type: restic
         release_name: steam-headless
         resources: {}
