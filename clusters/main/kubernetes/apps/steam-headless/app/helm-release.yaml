@@ -61,7 +61,7 @@ spec:
                 volsync:
                     - credentials: steam-headless
                       dest:
-                        enabled: true
+                        enabled: false
                       name: cfg
                       src:
                         enabled: false
