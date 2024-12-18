@@ -16,7 +16,7 @@ spec:
     releaseName: steam-headless
     values:
         global:
-            stopAll: true
+            stopAll: false
         TZ: America/Los_Angeles
         addons:
             codeserver:
@@ -47,7 +47,7 @@ spec:
                         enabled: false
                       name: cfg
                       src:
-                        enabled: false
+                        enabled: true
                       type: restic
             games:
                 enabled: true
@@ -64,7 +64,7 @@ spec:
                         enabled: false
                       name: cfg
                       src:
-                        enabled: false
+                        enabled: true
                       type: restic
         release_name: steam-headless
         resources: {}
