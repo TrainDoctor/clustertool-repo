@@ -82,31 +82,39 @@ spec:
                 enabled: true
                 sharedKey: custom-shared-key
                 loadBalancerIP: "${PLAYBACK_IP}"
+                type: LoadBalancer
                 ports:
                     main:
+                        enabled: true
                         port: 8083
                     steam-udp-27031:
+                        enabled: true
                         port: 27031
                         protocol: udp
                     steam-udp-27032:
+                        enabled: true
                         port: 27032
                         protocol: udp
                     steam-udp-27033:
+                        enabled: true
                         port: 27033
                         protocol: udp
                     steam-udp-27034:
+                        enabled: true
                         port: 27034
                         protocol: udp
                     steam-udp-27035:
+                        enabled: true
                         port: 27035
                         protocol: udp
                     steam-udp-27036:
+                        enabled: true
                         port: 27036
                         protocol: udp
                     steam-tcp-27040:
+                        enabled: true
                         port: 27040
                         protocol: tcp
-                type: LoadBalancer
         workload:
           main:
             podSpec:
