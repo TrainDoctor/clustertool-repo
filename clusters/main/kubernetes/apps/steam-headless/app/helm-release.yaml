@@ -73,8 +73,8 @@ spec:
                 UMASK: "0022"
                 privileged: true
                 readOnlyRootFilesystem: false
-                runAsGroup: 1000
-                runAsUser: 1000
+                runAsGroup: 0
+                runAsUser: 0
             pod:
                 fsGroupChangePolicy: OnRootMismatch
         service:
