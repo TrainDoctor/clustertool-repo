@@ -20,6 +20,7 @@ cniConfig:
     name: none
 patches:
     - '@./patches/all.yaml'
+    # - '@./patches/enable_user-namespaces.yaml'
 nodes:
     # We would adivce to always stick to a "k8s-something-1" style naming scheme
     - hostname: k8s-control-1
@@ -123,7 +124,6 @@ controlPlane:
       permissions: 420
       path: /etc/nfsmount.conf
       op: overwrite
-
 worker:
     patches:
         - '@./patches/worker.yaml'

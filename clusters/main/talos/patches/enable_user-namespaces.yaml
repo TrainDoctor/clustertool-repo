@@ -1,0 +1,13 @@
+- op: add
+  path: /cluster/apiServer/extraArgs/feature-gates
+  value:
+    UserNamespacesSupport=true,UserNamespacesPodSecurityStandards=true
+- op: add
+  path: /machine/sysctls
+  value:
+    user.max_user_namespaces: "11255"
+- op: add
+  path: /machine/kubelet/extraArgs/featureGates
+  value:
+    "UserNamespacesSupport": true
+    "UserNamespacesPodSecurityStandards": true
