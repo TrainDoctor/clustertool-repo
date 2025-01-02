@@ -92,22 +92,22 @@ spec:
                 loadBalancerIP: "${SERVICES_IP}"
                 type: LoadBalancer
                 ports:
-                assets:
-                    enabled: true
-                    protocol: http
-                    targetPort: 80
-                    port: 10613
+                    assets:
+                        enabled: true
+                        protocol: http
+                        targetPort: 80
+                        port: 10613
             tftp:
                 enabled: true
                 sharedKey: custom-shared-key
                 loadBalancerIP: "${SERVICES_IP}"
                 type: LoadBalancer
                 ports:
-                tftp:
-                    enabled: true
-                    port: 69
-                    protocol: udp
-                    targetPort: 69
+                    tftp:
+                        enabled: true
+                        port: 69
+                        protocol: udp
+                        targetPort: 69
         
         workload:
           main:
