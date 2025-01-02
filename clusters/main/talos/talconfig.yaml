@@ -27,8 +27,8 @@ nodes:
       ipAddress: ${MASTER1IP_IP}
       controlPlane: true
       nameservers:
-        - 1.1.1.1
-        - 8.8.8.8
+        - 192.168.0.253
+        - 192.168.0.254
       installDiskSelector:
         size: <= 1600GB
       networkInterfaces:
@@ -44,8 +44,8 @@ nodes:
     # - hostname: k8s-gpuworker-1
     #   ipAddress: ${GPUWORKERIP}
     #   nameservers:
-    #     - 8.8.8.8
-    #     - 1.1.1.1
+    #     - 192.168.0.253
+    #     - 192.168.0.254
     #   installDiskSelector:
     #     size: <= 250GB
     #   schematic:
@@ -59,8 +59,8 @@ nodes:
     - hostname: k8s-worker-1
       ipAddress: ${WORKER1IP}
       nameservers:
-        - 1.1.1.1
-        - 8.8.8.8
+        - 192.168.0.253
+        - 192.168.0.254
       installDiskSelector:
         size: <= 1600GB
       schematic:
@@ -73,8 +73,8 @@ nodes:
     - hostname: k8s-worker-2
       ipAddress: ${WORKER2IP}
       nameservers:
-        - 1.1.1.1
-        - 8.8.8.8
+        - 192.168.0.253
+        - 192.168.0.254
       installDiskSelector:
         size: <= 1600GB
       schematic:
