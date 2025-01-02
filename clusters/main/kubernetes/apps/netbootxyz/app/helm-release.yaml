@@ -4,7 +4,6 @@ metadata:
     name: netbootxyz
     namespace: netbootxyz
 spec:
-    hostUsers: false
     interval: 15m
     chart:
         spec:
