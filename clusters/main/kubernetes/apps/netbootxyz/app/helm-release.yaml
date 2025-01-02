@@ -38,7 +38,7 @@ spec:
             main:
                 enabled: false
         persistence:
-            home:
+            config:
                 enabled: true
                 mountPath: /config   
                 volsync:
@@ -46,6 +46,17 @@ spec:
                       dest:
                         enabled: false
                       name: cfg
+                      src:
+                        enabled: true
+                      type: restic
+            assets:
+                enabled: true
+                mountPath: /assets
+                volsync:
+                    - credentials: netbootxyz
+                      dest:
+                        enabled: false
+                      name: assets
                       src:
                         enabled: true
                       type: restic
