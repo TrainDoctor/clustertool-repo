@@ -83,6 +83,7 @@ spec:
                 type: LoadBalancer
                 ports:
                     main:
+                      enabled: true
                       protocol: http
                       targetPort: 3000
                       port: 10612
