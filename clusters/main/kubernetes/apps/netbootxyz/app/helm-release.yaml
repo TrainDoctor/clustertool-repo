@@ -40,15 +40,10 @@ spec:
         persistence:
             config:
                 enabled: true
-                mountPath: /config   
-                volsync:
-                    - credentials: netbootxyz
-                      dest:
-                        enabled: false
-                      name: cfg
-                      src:
-                        enabled: false
-                      type: restic
+                type: nfs
+                mountPath: /config
+                path: /mnt/PoolTwo/data/ipxe-config/
+                server: ${MEDIA_LOCAL_NAS_IP}
             assets:
                 enabled: true
                 type: nfs
