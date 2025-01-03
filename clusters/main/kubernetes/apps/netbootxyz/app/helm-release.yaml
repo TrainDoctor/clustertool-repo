@@ -44,10 +44,10 @@ spec:
                 volsync:
                     - credentials: netbootxyz
                       dest:
-                        enabled: true
+                        enabled: false
                       name: cfg
                       src:
-                        enabled: true
+                        enabled: false
                       type: restic
             assets:
                 enabled: true
