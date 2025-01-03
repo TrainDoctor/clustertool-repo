@@ -51,15 +51,10 @@ spec:
                       type: restic
             assets:
                 enabled: true
+                type: nfs
                 mountPath: /assets
-                volsync:
-                    - credentials: netbootxyz
-                      dest:
-                        enabled: false
-                      name: assets
-                      src:
-                        enabled: true
-                      type: restic
+                path: /mnt/PoolTwo/data/ipxe-assets/
+                server: ${MEDIA_LOCAL_NAS_IP}
         release_name: netbootxyz
         resources: {}
         securityContext:
