@@ -54,8 +54,8 @@ spec:
                 UMASK: "0022"
                 privileged: true
                 readOnlyRootFilesystem: false
-                runAsGroup: 568
-                runAsUser: 568
+                runAsGroup: 0
+                runAsUser: 0
                 capabilities:
                     add:
                       - SYS_CHROOT
