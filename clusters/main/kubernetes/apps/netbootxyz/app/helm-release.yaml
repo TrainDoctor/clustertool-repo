@@ -40,10 +40,7 @@ spec:
         persistence:
             config:
                 enabled: true
-                type: nfs
                 mountPath: /config
-                path: /mnt/PoolTwo/data/ipxe-config/
-                server: ${MEDIA_LOCAL_NAS_IP}
             assets:
                 enabled: true
                 type: nfs
