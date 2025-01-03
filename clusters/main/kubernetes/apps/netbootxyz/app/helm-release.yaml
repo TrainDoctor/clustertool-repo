@@ -44,7 +44,7 @@ spec:
                 volsync:
                     - credentials: netbootxyz
                       dest:
-                        enabled: false
+                        enabled: true
                       name: cfg
                       src:
                         enabled: true
