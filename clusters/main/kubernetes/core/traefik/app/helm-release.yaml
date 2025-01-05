@@ -86,6 +86,3 @@ spec:
         #     - 2a0a:a440::/29
         #     - 2606:50c0::/32
     defaultCertificate: "domain-0-wildcard"
-    # service:
-    #   tcp:
-    #     loadBalancerIP: ${TRAEFIK_IP}
