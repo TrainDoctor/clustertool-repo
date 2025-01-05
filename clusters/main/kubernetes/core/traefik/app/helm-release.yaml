@@ -70,13 +70,13 @@ spec:
           # certManager:
           #   enabled: true
           #   certificateIssuer: cloudflare
-    middlewares:
-      ipWhiteList:
-        - name: local
-          sourceRange:
-            - 172.16.0.0/16
-            - 172.17.0.0/16
-            - 192.168.0.0/24
+    # middlewares:
+    #   ipWhiteList:
+    #     - name: local
+    #       sourceRange:
+    #         - 172.16.0.0/16
+    #         - 172.17.0.0/16
+    #         - 192.168.0.0/24
         # - name: github
         #   sourceRange:
         #     - 192.30.252.0/22
