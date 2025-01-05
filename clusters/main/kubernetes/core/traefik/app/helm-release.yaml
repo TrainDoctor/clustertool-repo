@@ -44,10 +44,11 @@ spec:
         format: common
       access:
         enabled: true
+    portal:
+      open:
+        enabled: true
+        path: /dashboard/
     service:
-      main:
-        type: LoadBalancer
-        loadBalancerIP: 192.168.0.212
       tcp:
         loadBalancerIP: ${IP_TRAEFIK}
     ## When bootstrap new cluster, comment complete ingress section.
@@ -64,6 +65,8 @@ spec:
                 namespace: traefik
               # - name: traefik-redirect
               #   namespace: traefik  
+          homepage:
+            href: https://{{  ( index .Values.ingress.main.hosts 0 ).host  }}/dashboard/
           certManager:
             enabled: true
             certificateIssuer: cloudflare
@@ -74,14 +77,14 @@ spec:
             - 172.16.0.0/16
             - 172.17.0.0/16
             - 192.168.0.0/24
-        - name: github
-          sourceRange:
-            - 192.30.252.0/22
-            - 185.199.108.0/22
-            - 140.82.112.0/20
-            - 143.55.64.0/20
-            - 2a0a:a440::/29
-            - 2606:50c0::/32
+        # - name: github
+        #   sourceRange:
+        #     - 192.30.252.0/22
+        #     - 185.199.108.0/22
+        #     - 140.82.112.0/20
+        #     - 143.55.64.0/20
+        #     - 2a0a:a440::/29
+        #     - 2606:50c0::/32
     # defaultCertificate: "domain-0-wildcard"
     # service:
     #   tcp:
