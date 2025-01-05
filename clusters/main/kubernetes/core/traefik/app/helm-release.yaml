@@ -67,9 +67,9 @@ spec:
               #   namespace: traefik  
           homepage:
             href: https://{{  ( index .Values.ingress.main.hosts 0 ).host  }}/dashboard/
-          certManager:
-            enabled: true
-            certificateIssuer: cloudflare
+          # certManager:
+          #   enabled: true
+          #   certificateIssuer: cloudflare
     middlewares:
       ipWhiteList:
         - name: local
@@ -85,7 +85,7 @@ spec:
         #     - 143.55.64.0/20
         #     - 2a0a:a440::/29
         #     - 2606:50c0::/32
-    # defaultCertificate: "domain-0-wildcard"
+    defaultCertificate: "domain-0-wildcard"
     # service:
     #   tcp:
     #     loadBalancerIP: ${TRAEFIK_IP}
