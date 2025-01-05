@@ -34,31 +34,55 @@ spec:
     # and/or disable its service
     global:
       stopAll: false
-    defaultCertificate: "domain-0-wildcard"
+    TZ: America/Los_Angeles
+    logs:
+      # Traefik logs concern everything that happens to Traefik itself (startup, configuration, events, shutdown, and so on).
+      general:
+        # By default, the level is set to ERROR. Alternative logging levels are DEBUG, PANIC, FATAL, ERROR, WARN, and INFO.
+        level: ERROR
+        # -- Set the format of General Logs to be either Common Log Format or JSON. For more information: https://doc.traefik.io/traefik/observability/logs/#format
+        format: common
+      access:
+        enabled: true
     service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: 192.168.0.212
       tcp:
-        loadBalancerIP: ${TRAEFIK_IP}
+        loadBalancerIP: ${IP_TRAEFIK}
+    ## When bootstrap new cluster, comment complete ingress section.
     ingress:
       main:
         enabled: true
-        integrations:
-          ## NOTE: traefik integration must be set to false if installing traefik
-          ##       for the first time!
-          traefik:
-            enabled: false
         hosts:
           - host: traefik.${DOMAIN_0}
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - traefik.${DOMAIN_0}
-            clusterIssuer: ${CERT_ISSUER}
+        integrations:
+          traefik:
+            enabled: true
+            middlewares:
+              - name: local
+                namespace: traefik
+              # - name: traefik-redirect
+              #   namespace: traefik  
+          certManager:
+            enabled: true
+            certificateIssuer: cloudflare
     middlewares:
       ipWhiteList:
         - name: local
           sourceRange:
-            - ${PODNET}
-            - ${SVCNET}
-            - ${LOCALNET}
+            - 172.16.0.0/16
+            - 172.17.0.0/16
+            - 192.168.0.0/24
+        - name: github
+          sourceRange:
+            - 192.30.252.0/22
+            - 185.199.108.0/22
+            - 140.82.112.0/20
+            - 143.55.64.0/20
+            - 2a0a:a440::/29
+            - 2606:50c0::/32
+    # defaultCertificate: "domain-0-wildcard"
+    # service:
+    #   tcp:
+    #     loadBalancerIP: ${TRAEFIK_IP}
