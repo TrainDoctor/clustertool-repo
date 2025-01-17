@@ -67,8 +67,11 @@ spec:
                       src:
                         enabled: true
                       type: restic
+        
         release_name: steam-headless
-        resources: {}
+        resources:
+            limits:
+              nvidia.com/gpu: 1
         securityContext:
             container:
                 UMASK: "0022"
@@ -119,6 +122,7 @@ spec:
         workload:
           main:
             podSpec:
+            runtimeClassName: "nvidia"
             containers:
                 main:
                 probes:
