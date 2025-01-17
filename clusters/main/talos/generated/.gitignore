@@ -2,3 +2,4 @@ main-k8s-control-1.yaml
 talosconfig
 main-k8s-worker-1.yaml
 main-k8s-worker-2.yaml
+main-k8s-gpuworker-1.yaml
